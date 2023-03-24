@@ -24,7 +24,7 @@ public class Controller {
         this.repository = repository;
     }
 
-    //Ako e prazna sesijata setirame celosna lista na reviews, ako postoi sesija ja vrakjame filtriranata lista
+    //If the session is empty we put the list of reviews in the session, otherwise we return the filtered list
     @GetMapping("/api")
     public String getReviews(HttpServletRequest req,Model model){
         if(req.getSession().getAttribute("reviews") == null){
@@ -42,26 +42,26 @@ public class Controller {
                                 @RequestParam int dateValue,
                                 @RequestParam int textValue,
                                 HttpServletRequest request){
-        //Ja vleceme listata od sesija
+        //We take the list from the session
         List<Review> filteredList = (List<Review>) request.getSession().getAttribute("reviews");
-        //Pocnuvame od minimalen Rating za da ja filtrirame listata
+        //We filter it first by the minimum review rating
         filteredList = reviewService.minimumRating(minimumRating);
-        //Vo slucaj ako treba spored najstar rating da sortirame
+        //We sort by oldest date added
         if(dateValue == 1){
             filteredList = reviewService.sortbyDate(filteredList);
         }
-        //Sortirame Spored najvisok ili najnizok rating
+        //We sort by highest or lowest rating
         if(ratingValue == 1){
             filteredList = reviewService.sortbyRating(filteredList);
             Collections.reverse(filteredList);
         }else {
             filteredList = reviewService.sortbyRating(filteredList);
         }
-        //Sortirame spored text
+        //Sort by text priority
         if(textValue == 1){
             filteredList = reviewService.sortByText(filteredList);
         }
-        //Stavame novo kreiranata lista vo sesija
+        //Replace the previous list in the session with our new filtered list
         request.getSession().setAttribute("reviews",filteredList);
         return "redirect:/new/api";
     }
