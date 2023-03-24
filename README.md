@@ -1,4 +1,6 @@
 # EmbedSocialInternshipExcercise
+Simply running the EmbedSocialApplication.java file should get the app started.
+The application is mapped to http://localhost:9091/new/api;
 I only displayed 5 attributes of the json data in the final table with the reasoning that it is enough to show that the filtering and sorting works.
 I displayed the review ID, reviewer name, review rating, review text and the date the review was created on.
 From the testing i did on the application the data is filtered and sorted as intented.
