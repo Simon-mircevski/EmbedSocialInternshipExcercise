@@ -16,7 +16,9 @@ import java.util.Map;
 @Component
 public class DataHolder {
     public static ArrayList<Review> reviewsList = new ArrayList<>();
-    String json1 = "{\n" +
+
+    String fullJson = "[\n" +
+            "    {\n" +
             "      \"id\": 2097047,\n" +
             "      \"reviewId\": \"93f131be27dc1122bb7ef0048ad10e4f\",\n" +
             "      \"reviewFullText\": \"5 star review\",\n" +
@@ -41,8 +43,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json2 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097046,\n" +
             "      \"reviewId\": \"6e7bd4c71a56885ef583bd79186af689\",\n" +
             "      \"reviewFullText\": \"4 star review\",\n" +
@@ -67,8 +69,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json3 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097045,\n" +
             "      \"reviewId\": \"ced8bd056d0adec93c651f935c7dde80\",\n" +
             "      \"reviewFullText\": \"3 star review\",\n" +
@@ -93,8 +95,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json4 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097044,\n" +
             "      \"reviewId\": \"b0dfee9017fafe7d751f0fea1f3ce540\",\n" +
             "      \"reviewFullText\": \"2 star review\",\n" +
@@ -119,8 +121,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json5 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097043,\n" +
             "      \"reviewId\": \"10588b914a39967f3a702b02f3751794\",\n" +
             "      \"reviewFullText\": \"1 star review\",\n" +
@@ -145,8 +147,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json6 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097042,\n" +
             "      \"reviewId\": \"1d14901bbb67ded3368d2d8d8b5989d8\",\n" +
             "      \"reviewFullText\": \"5 star review\",\n" +
@@ -171,8 +173,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json7 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097041,\n" +
             "      \"reviewId\": \"ca10718af15af32f71da09a6e5f78c48\",\n" +
             "      \"reviewFullText\": \"\",\n" +
@@ -197,8 +199,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json8 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097040,\n" +
             "      \"reviewId\": \"65b3ba7d67109d2a4f573fca44d5e532\",\n" +
             "      \"reviewFullText\": \"3 star review\",\n" +
@@ -223,8 +225,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json9 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097039,\n" +
             "      \"reviewId\": \"c111f4f05a1048e3a43a28e5bfd0be27\",\n" +
             "      \"reviewFullText\": \"\",\n" +
@@ -249,8 +251,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json10 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097038,\n" +
             "      \"reviewId\": \"be88045286fcb7ca91e234b37eef511b\",\n" +
             "      \"reviewFullText\": \"1 star review\",\n" +
@@ -275,8 +277,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json11 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097037,\n" +
             "      \"reviewId\": \"70b57c0433d0221b0788b106fb9fdd5a\",\n" +
             "      \"reviewFullText\": \"\",\n" +
@@ -301,8 +303,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json12 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097036,\n" +
             "      \"reviewId\": \"59cbd1e887e8cce76ef68318b198ddf0\",\n" +
             "      \"reviewFullText\": \"4 star review\",\n" +
@@ -327,8 +329,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json13 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097034,\n" +
             "      \"reviewId\": \"ac50da2870193abe25ba529597cfbd23\",\n" +
             "      \"reviewFullText\": \"\",\n" +
@@ -353,8 +355,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json14 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097032,\n" +
             "      \"reviewId\": \"f0c8bdd06d6c4ec35de765657e118602\",\n" +
             "      \"reviewFullText\": \"2 star review\",\n" +
@@ -379,8 +381,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json15 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097031,\n" +
             "      \"reviewId\": \"ef2ad7498e260ec9462d0f27801c86b3\",\n" +
             "      \"reviewFullText\": \"\",\n" +
@@ -405,8 +407,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json16 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097030,\n" +
             "      \"reviewId\": \"d55229232defac9397fc6f12550d4f1f\",\n" +
             "      \"reviewFullText\": \"5 star review\",\n" +
@@ -431,8 +433,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json17 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097029,\n" +
             "      \"reviewId\": \"3a6dd5070788c36f28c4f78eb349c248\",\n" +
             "      \"reviewFullText\": \"4 star review\",\n" +
@@ -457,8 +459,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json18 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097028,\n" +
             "      \"reviewId\": \"01223a92f8823251b9678720def5ff43\",\n" +
             "      \"reviewFullText\": \"3 star review\",\n" +
@@ -483,8 +485,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json19 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097027,\n" +
             "      \"reviewId\": \"5b8c2de55dbb5ccf9f8d033c1859b559\",\n" +
             "      \"reviewFullText\": \"2 star review\",\n" +
@@ -509,8 +511,8 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    String json20 = "{\n" +
+            "    },\n" +
+            "    {\n" +
             "      \"id\": 2097026,\n" +
             "      \"reviewId\": \"691d4d278dc23aa9a478e078b9382c2a\",\n" +
             "      \"reviewFullText\": \"1 star review\",\n" +
@@ -535,49 +537,13 @@ public class DataHolder {
             "      \"href\": null,\n" +
             "      \"logoHref\": null,\n" +
             "      \"photos\": []\n" +
-            "    }";
-    Review data1 = new Gson().fromJson(json1, Review.class);
-    Review data2 = new Gson().fromJson(json2, Review.class);
-    Review data3 = new Gson().fromJson(json3, Review.class);
-    Review data4 = new Gson().fromJson(json4, Review.class);
-    Review data5 = new Gson().fromJson(json5, Review.class);
-    Review data6 = new Gson().fromJson(json6, Review.class);
-    Review data7 = new Gson().fromJson(json7, Review.class);
-    Review data8 = new Gson().fromJson(json8, Review.class);
-    Review data9 = new Gson().fromJson(json9, Review.class);
-    Review data10 = new Gson().fromJson(json10, Review.class);
-    Review data11 = new Gson().fromJson(json11, Review.class);
-    Review data12 = new Gson().fromJson(json12, Review.class);
-    Review data13 = new Gson().fromJson(json13, Review.class);
-    Review data14 = new Gson().fromJson(json14, Review.class);
-    Review data15 = new Gson().fromJson(json15, Review.class);
-    Review data16 = new Gson().fromJson(json16, Review.class);
-    Review data17 = new Gson().fromJson(json17, Review.class);
-    Review data18 = new Gson().fromJson(json18, Review.class);
-    Review data19 = new Gson().fromJson(json19, Review.class);
-    Review data20 = new Gson().fromJson(json20, Review.class);
+            "    }\n" +
+            "  ]";
+    Type listType = new TypeToken<List<Review>>(){}.getType();
+    List<Review> reviews = new Gson().fromJson(fullJson, listType);
 
     @PostConstruct
     public void init(){
-        reviewsList.add(data1);
-        reviewsList.add(data2);
-        reviewsList.add(data3);
-        reviewsList.add(data4);
-        reviewsList.add(data5);
-        reviewsList.add(data6);
-        reviewsList.add(data7);
-        reviewsList.add(data8);
-        reviewsList.add(data9);
-        reviewsList.add(data10);
-        reviewsList.add(data11);
-        reviewsList.add(data12);
-        reviewsList.add(data13);
-        reviewsList.add(data14);
-        reviewsList.add(data15);
-        reviewsList.add(data16);
-        reviewsList.add(data17);
-        reviewsList.add(data18);
-        reviewsList.add(data19);
-        reviewsList.add(data20);
+        reviewsList.addAll(reviews);
     }
 }
