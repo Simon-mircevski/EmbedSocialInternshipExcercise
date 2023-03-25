@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+
 @org.springframework.stereotype.Controller
 @RequestMapping("/new")
 public class Controller {
@@ -46,22 +48,8 @@ public class Controller {
         List<Review> filteredList = (List<Review>) request.getSession().getAttribute("reviews");
         //We filter it first by the minimum review rating
         filteredList = reviewService.minimumRating(minimumRating);
-        //We sort by oldest date added
-        if(dateValue == 1){
-            filteredList = reviewService.sortbyDate(filteredList);
-        }
-        //We sort by highest or lowest rating
-        if(ratingValue == 1){
-            filteredList = reviewService.sortbyRating(filteredList);
-            Collections.reverse(filteredList);
-        }else {
-            filteredList = reviewService.sortbyRating(filteredList);
-        }
-        //Sort by text priority
-        if(textValue == 1){
-            filteredList = reviewService.sortByText(filteredList);
-        }
-        //Replace the previous list in the session with our new filtered list
+
+        filteredList = reviewService.sort(filteredList, textValue,ratingValue,dateValue);
         request.getSession().setAttribute("reviews",filteredList);
         return "redirect:/new/api";
     }
