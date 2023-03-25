@@ -9,4 +9,5 @@ public interface ReviewService {
     List<Review> sortbyDate(List<Review> reviews);
     List<Review> sortByText(List<Review> reviews);
     List<Review> sortbyRating(List<Review> reviews);
+    List<Review> sort(List<Review> reviews, int text, int rating, int date);
 }
